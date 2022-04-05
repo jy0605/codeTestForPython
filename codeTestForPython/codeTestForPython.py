@@ -46,10 +46,10 @@ print(resMultiplyValue)
 n, m = map(int, input().split(' '))
 arrField = [list() for i in range(n)]
 
-print(arrField)
-
-for i in range(n):
-    thisLineInfo = map(int, input().split(' '))
+for i in range(n): # 여기에서 m 설정 안해주면, 에러나도록 테스트케이스가 뭔가 있나봄
+    thisLineInfo_str = input().split(' ')
+    thisLinearray = list(thisLineInfo_str[i] for i in range(m))
+    thisLineInfo = map(int, thisLinearray)
     arrField[i] = list(thisLineInfo)
 
 firstL, firstR = map(int, input().split(' '))
@@ -75,3 +75,4 @@ for i in range(n):
   numberOfRestCriminals += arrField[i].count(1)
 
 print(numberOfRestCriminals)
+
